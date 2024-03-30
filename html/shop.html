@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/5f219ec053.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/general.css" />
+
+    <style>
+      .main-container {
+        margin: 50px 0;
+        display: flex;
+        align-items: start;
+        gap: 30px;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 250px;
+        padding: 20px;
+        background-color: #f2f2f2;
+      }
+
+      .sidebar h2 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .filter-options {
+        margin-bottom: 20px;
+      }
+
+      .checkbox {
+        margin-bottom: 10px;
+      }
+
+      /* Main Content */
+      .main-content {
+        width: 100%;
+      }
+
+      .search-container {
+        margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .search-container input[type="text"] {
+        padding: 20px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      .search-container button {
+        padding: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+      }
+    </style>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="top-header">
+        Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+      </div>
+
+      <div class="header-wrapper">
+        <h1 class="logo">Exclusive</h1>
+
+        <ul class="navbar">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./shop.html">Shop</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./auth.html">Sign Up</a></li>
+        </ul>
+
+        <div class="right-side">
+          <!-- SEARCH-BOX -->
+          <div class="searchbox">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search..." />
+          </div>
+
+          <!-- ICONS -->
+          <div class="icons">
+            <div class="icon-container">
+              <i class="fa-solid fa-heart"></i>
+              <span class="icon-badge" id="favoriteCount">0</span>
+            </div>
+            <div class="icon-container">
+              <a href="./cart.html">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </a>
+              <span class="icon-badge" id="cartCount">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="page-container">
+      <div class="main-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <h2>Brand</h2>
+          <div class="filter-options">
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="samsung"
+                name="brand"
+                value="Samsung"
+              />
+              <label for="samsung">Samsung</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="apple" name="brand" value="Apple" />
+              <label for="apple">Apple</label>
+            </div>
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="google"
+                name="brand"
+                value="Google Pixel"
+              />
+              <label for="google">Google Pixel</label>
+            </div>
+          </div>
+
+          <h2>Price</h2>
+          <div class="filter-options">
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="lowToHigh"
+                name="price"
+                value="lowToHigh"
+              />
+              <label for="lowToHigh">Low to high</label>
+            </div>
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="highToLow"
+                name="price"
+                value="highToLow"
+              />
+              <label for="highToLow">High to low</label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- LIST PRODUCTS -->
+        <section class="main-content">
+          <div class="search-container">
+            <input id="searchbox" type="text" placeholder="Search..." />
+            <button><i class="fas fa-search"></i></button>
+          </div>
+
+          <div class="product-grid">
+            <!-- RENDER PRODUCT CARDS INSIDE HERE -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="page-container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>About Us</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              viverra ex nec purus consequat.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p>Email: info@example.com</p>
+            <p>Phone: +123 456 7890</p>
+          </div>
+          <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 EXLUCIVE. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS FILE -->
+    <script>
+      const products = [
+        {
+          id: 1,
+          name: "SAMSUNG Galaxy A15 5G 128GB",
+          price: 199.99,
+          image: "../images/phone-1.jpg",
+          brand: "Samsung",
+        },
+        {
+          id: 2,
+          name: "SAMSUNG Galaxy S24+, 256GB, Grayscale",
+          price: 849.99,
+          image: "../images/phone-2.jpg",
+          brand: "Samsung",
+        },
+        {
+          id: 3,
+          name: "SAMSUNG Galaxy S23, 128GB, Greenish",
+          price: 849.99,
+          image: "../images/phone-3.jpg",
+          brand: "Samsung",
+        },
+        {
+          id: 4,
+          name: "Apple iPhone 13 Pro, 128GB, Sierra Blue - Unlocked",
+          price: 470.0,
+          image: "../images/iphone-1.jpg",
+          brand: "Apple",
+        },
+        {
+          id: 5,
+          name: "Apple iPhone 12 Mini, 64GB, Black",
+          price: 204.9,
+          image: "../images/iphone-2.jpg",
+          brand: "Apple",
+        },
+        {
+          id: 6,
+          name: "Apple iPhone 12, 64GB, Green Lime",
+          price: 174.95,
+          image: "../images/iphone-3.jpg",
+          brand: "Apple",
+        },
+        {
+          id: 7,
+          name: "Google Pixel 7a, 128GB – Charcoal",
+          price: 374.0,
+          image: "../images/gg-pixel-1.jpg",
+          brand: "Google Pixel",
+        },
+        {
+          id: 8,
+          name: "Google Pixel 8, 128GB – Obsidian",
+          price: 499.0,
+          image: "../images/gg-pixel-2.jpg",
+          brand: "Google Pixel",
+        },
+        {
+          id: 9,
+          name: "Pixel 4 - Clearly White - 64GB - Unlocked",
+          price: 165,
+          image: "../images/gg-pixel-3.jpg",
+          brand: "Google Pixel",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderProducts(products);
+        updateFavoriteCount();
+        updateCartCount();
+      });
+
+      function renderProducts(products) {
+        const container = document.querySelector(".product-grid");
+        container.innerHTML = "";
+
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+        products.forEach((product) => {
+          const card = document.createElement("div");
+          card.classList.add("product-card");
+
+          const isFavorite = favorites.some(
+            (favProduct) => favProduct.id === product.id
+          );
+
+          const heartIconClass = isFavorite ? "fa-heart active" : "fa-heart";
+
+          card.innerHTML = `
+                            <div class="product-image">
+                                <a href="./detail.html">
+                                  <img src="${product.image}" alt="${product.name}">
+                                  </a>
+                                <span class="heart-icon" onclick="toggleFavorite(${product.id}, this)">
+                                <i class="fa-solid ${heartIconClass}"></i>
+                                </span>
+                            </div>
+                            <div class="product-details">
+                                <h2 class="product-title">${product.name}</h2>
+                                <p class="product-price">$${product.price}</p>
+                                <div class="product-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
+                            </div>
+                        `;
+
+          container.appendChild(card);
+        });
+      }
+
+      function toggleFavorite(productId, heartIcon) {
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        const index = favorites.findIndex(
+          (favProduct) => favProduct.id === productId
+        );
+
+        if (index !== -1) {
+          // Product is already in favorites, so remove it
+          favorites.splice(index, 1);
+          heartIcon.querySelector("i").classList.remove("active");
+        } else {
+          // Product is not in favorites, so add it
+          favorites.push({ id: productId });
+          heartIcon.querySelector("i").classList.add("active");
+        }
+
+        // Update favorites in localStorage
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+
+        // Re-render products after updating favorites
+        renderProducts(products);
+        updateFavoriteCount();
+      }
+
+      function updateFavoriteCount() {
+        const favoriteCount =
+          JSON.parse(localStorage.getItem("favorites")) || [];
+        document.getElementById("favoriteCount").textContent =
+          favoriteCount.length;
+      }
+
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        document.getElementById("cartCount").textContent = cart.length;
+      }
+
+      function addToCart(productId) {
+        const product = products.find((item) => item.id === productId);
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const productExists = cart.some((item) => item.id === productId);
+
+        if (productExists) {
+          cart = cart.map((item) => {
+            if (item.id === productId) {
+              return { ...item, quantity: item.quantity + 1 };
+            }
+            return item;
+          });
+        } else {
+          cart.push({ ...product, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+      }
+
+      /* FILTER PRODUCTS BY NAME */
+      const searchInput = document.querySelector("#searchbox");
+      searchInput.addEventListener("input", function (event) {
+        const searchTerm = event.target.value.trim();
+        const filteredProducts = products.filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        renderProducts(filteredProducts);
+      });
+
+      /* FILTER PRODUCTS BY BRAND */
+      const checkboxes = document.querySelectorAll(
+        'input[type="checkbox"][name="brand"]'
+      );
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+          if (this.checked) {
+            const label = this.nextElementSibling.textContent;
+            const filteredProducts = products.filter(
+              (item) => item.brand === label
+            );
+            renderProducts(filteredProducts);
+          }
+        });
+      });
+
+      /* FILTER PRODUCTS BY PRICE */
+      const priceCheckboxList = document.querySelectorAll(
+        'input[type="checkbox"][name="price"]'
+      );
+
+      priceCheckboxList.forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+          if (this.checked) {
+            const value = this.value;
+            if (value === "lowToHigh") {
+              // Sort products by price from low to high
+              const sortedProducts = products
+                .slice()
+                .sort((a, b) => a.price - b.price);
+              renderProducts(sortedProducts);
+            } else if (value === "highToLow") {
+              // Sort products by price from high to low
+              const sortedProducts = products
+                .slice()
+                .sort((a, b) => b.price - a.price);
+              renderProducts(sortedProducts);
+            }
+          }
+        });
+      });
+
+      /* HANDLE CHECKBOXES */
+      const brandCheckboxes = document.querySelectorAll('input[name="brand"]');
+      brandCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("click", function () {
+          if (this.checked) {
+            brandCheckboxes.forEach((cb) => {
+              if (cb !== this) {
+                cb.checked = false;
+              }
+            });
+          }
+          renderProducts(products);
+        });
+      });
+
+      const priceCheckboxes = document.querySelectorAll('input[name="price"]');
+      priceCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("click", function () {
+          if (this.checked) {
+            priceCheckboxes.forEach((cb) => {
+              if (cb !== this) {
+                cb.checked = false;
+              }
+            });
+          }
+          renderProducts(products);
+        });
+      });
+    </script>
+  </body>
+</html>
