@@ -3,63 +3,63 @@ const products = [
     id: 1,
     name: "SAMSUNG Galaxy A15 5G 128GB",
     price: 199.99,
-    image: "../images/phone-1.jpg",
+    image: "./images/iphone-1.jpg",
     brand: "Samsung",
   },
   {
     id: 2,
     name: "SAMSUNG Galaxy S24+, 256GB, Grayscale",
     price: 849.99,
-    image: "../images/phone-2.jpg",
+    image: "./images/phone-2.jpg",
     brand: "Samsung",
   },
   {
     id: 3,
     name: "SAMSUNG Galaxy S23, 128GB, Greenish",
     price: 849.99,
-    image: "../images/phone-3.jpg",
+    image: "./images/phone-3.jpg",
     brand: "Samsung",
   },
   {
     id: 4,
     name: "Apple iPhone 13 Pro, 128GB, Sierra Blue",
     price: 470.0,
-    image: "../images/iphone-1.jpg",
+    image: "./images/iphone-1.jpg",
     brand: "Apple",
   },
   {
     id: 5,
     name: "Apple iPhone 12 Mini, 64GB, Black",
     price: 204.9,
-    image: "../images/iphone-2.jpg",
+    image: "./images/iphone-2.jpg",
     brand: "Apple",
   },
   {
     id: 6,
     name: "Apple iPhone 12, 64GB, Green Lime",
     price: 174.95,
-    image: "../images/iphone-3.jpg",
+    image: "./images/iphone-3.jpg",
     brand: "Apple",
   },
   {
     id: 7,
     name: "Google Pixel 7a, 128GB – Charcoal",
     price: 374.0,
-    image: "../images/gg-pixel-1.jpg",
+    image: "./images/gg-pixel-1.jpg",
     brand: "Google Pixel",
   },
   {
     id: 8,
     name: "Google Pixel 8, 128GB – Obsidian",
     price: 499.0,
-    image: "../images/gg-pixel-2.jpg",
+    image: "./images/gg-pixel-2.jpg",
     brand: "Google Pixel",
   },
   {
     id: 9,
     name: "Pixel 4 - Clearly White - 64GB - Unlocked",
     price: 165,
-    image: "../images/gg-pixel-3.jpg",
+    image: "./images/gg-pixel-3.jpg",
     brand: "Google Pixel",
   },
 ];
@@ -92,7 +92,7 @@ function renderProducts(products) {
 
     card.innerHTML = `
     <div class="product-image">
-      <a href="../html/detail.html">
+      <a href="./detail.html">
         <img src="${product.image}" alt="${product.name}">
       </a>
         <span class="heart-icon" onclick="toggleFavorite(${product.id}, this)">

@@ -77,7 +77,7 @@
         <h1 class="logo">Exclusive</h1>
 
         <ul class="navbar">
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="./index.html">Home</a></li>
           <li><a href="./shop.html">Shop</a></li>
           <li><a href="./about.html">About</a></li>
           <li><a href="./auth.html">Sign Up</a></li>
@@ -166,6 +166,7 @@
         renderProductsFromLocalStorage();
         calculateTotalMoney();
         addDeleteEventListeners();
+        updateCartCount();
       });
 
       function renderProductsFromLocalStorage() {
@@ -198,12 +199,12 @@
           totalMoney += product.price * product.quantity;
         });
 
-        const totalMoneyText = document.getElementById("totalMoney");
+        let totalMoneyText = document.getElementById("totalMoney");
 
         if (totalMoney === 0) {
-          totalMoneyText = "";
+          totalMoneyText.textContent = "";
         } else {
-          totalMoneyText = `Total: $${totalMoney.toFixed(2)}`;
+          totalMoneyText.textContent = `Total: $${totalMoney.toFixed(2)}`;
         }
       }
 
@@ -232,6 +233,7 @@
 
       function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        console.log(cart);
         document.getElementById("cartCount").textContent = cart.length;
       }
     </script>
