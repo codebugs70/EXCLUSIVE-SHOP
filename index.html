@@ -468,7 +468,6 @@
       function renderImages(products) {
         const container = document.querySelector(".explore-product-container");
 
-        // Clear existing content in the container
         container.innerHTML = "";
 
         products.forEach((p) => {
@@ -487,19 +486,15 @@
         );
 
         if (index !== -1) {
-          // Product is already in favorites, so remove it
           favorites.splice(index, 1);
           heartIcon.querySelector("i").classList.remove("active");
         } else {
-          // Product is not in favorites, so add it
           favorites.push({ id: productId });
           heartIcon.querySelector("i").classList.add("active");
         }
 
-        // Update favorites in localStorage
         localStorage.setItem("favorites", JSON.stringify(favorites));
 
-        // Re-render products after updating favorites
         renderProducts(products);
         updateFavoriteCount();
       }
@@ -546,12 +541,9 @@
           const question = item.querySelector(".faq-question");
           const answer = item.querySelector(".faq-answer");
 
-          // Add click event listener to each question
           question.addEventListener("click", () => {
-            // Toggle active class on question
             question.classList.toggle("active");
 
-            // Toggle max-height of answer to expand/collapse
             if (question.classList.contains("active")) {
               answer.style.maxHeight = answer.scrollHeight + "px";
             } else {
@@ -565,20 +557,17 @@
       const filterItems = document.querySelectorAll(".filter-list .item");
       filterItems.forEach((item) => {
         item.addEventListener("click", () => {
-          // Remove the 'active' class from all filter items
           filterItems.forEach((i) => i.classList.remove("active"));
 
-          // Add the 'active' class to the clicked filter item
           item.classList.add("active");
 
-          const brand = item.dataset.brand; // Get the brand from the data attribute
+          const brand = item.dataset.brand;
 
-          // Check if the special 'Show All' option is selected
           if (brand === "all") {
-            renderImages(products); // Display all products
+            renderImages(products);
           } else {
             const filteredProducts = filterByBrand(products, brand);
-            renderImages(filteredProducts); // Display filtered products
+            renderImages(filteredProducts);
           }
         });
       });

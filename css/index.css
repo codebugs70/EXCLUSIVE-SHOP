@@ -39,7 +39,30 @@ header {
 
 .navbar li a {
   font-weight: 500;
+  position: relative;
+  transition: 0.2s linear;
   opacity: 0.8;
+}
+
+.navbar li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  transition: all 0.3s linear;
+  background-color: #ff6651;
+}
+
+.navbar li a:hover::before {
+  width: 100%;
+}
+
+.navbar li a:hover {
+  opacity: 1;
+  color: #ff6651;
 }
 
 .right-side {

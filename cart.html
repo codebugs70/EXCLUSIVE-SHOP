@@ -17,10 +17,6 @@
   </head>
 
   <style>
-    main {
-      height: 100vh;
-    }
-
     #totalMoney {
       text-align: right;
       font-size: 30px;
@@ -167,6 +163,7 @@
         calculateTotalMoney();
         addDeleteEventListeners();
         updateCartCount();
+        updateFavoriteCount();
       });
 
       function renderProductsFromLocalStorage() {
@@ -181,7 +178,7 @@
                     <td>${product.id}</td>
                     <td><img src="${product.image}" alt="${product.name}"></td>
                     <td>${product.name}</td>
-                    <td>$${product.price}</td>
+                    <td>$${product.price * product.quantity}</td>
                     <td>${product.quantity}</td>
                     <td>
                         <button class="deleteBtn" style="color:red">Delete</button>
@@ -229,6 +226,13 @@
         );
         localStorage.setItem("cart", JSON.stringify(products));
         updateCartCount();
+      }
+
+      function updateFavoriteCount() {
+        const favoriteCount =
+          JSON.parse(localStorage.getItem("favorites")) || [];
+        document.getElementById("favoriteCount").textContent =
+          favoriteCount.length;
       }
 
       function updateCartCount() {
